@@ -11,8 +11,8 @@ const publicDir = path.join(__dirname, 'src/public')
 
 const apiKey = process.env.UNSPLASH_API_KEY;
 
-let count = 10;
-let initialLoad = true;
+let count = 20;
+let totalApiRequests = 30;
 
 app.use(express.static(publicDir));
 
@@ -25,13 +25,13 @@ app.get('/api', async (req, res) => {
         hostname: 'api.unsplash.com',
         path: `/photos/random?count=${count}&client_id=${apiKey}`
     }
-    if (initialLoad) {
-        initialLoad = false;
-        count = 30;
+    if(totalApiRequests === 0){
+        return res.status(429).json({err: "Too many requests, try again later"});
     }
 
     let body = '';
     https.get(options, (response) => {
+        totalApiRequests--;
         try {
             if (response.statusCode !== 200) {
                 throw new Error('Error fetching images!');
