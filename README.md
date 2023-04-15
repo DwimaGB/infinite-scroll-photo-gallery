@@ -2,5 +2,11 @@
 
 Random images gallery using Unsplash API
 
-||test||
+<details>
+<summary>test</summary>
+
+test
+
+</details>
+
 https://photo-gallery-unsplash.onrender.com
