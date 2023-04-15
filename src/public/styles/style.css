@@ -44,6 +44,14 @@ h1{
     gap: 20px;
 }
 
+.image-link{
+    transition: all 200ms;
+}
+
+.image-link:hover{
+    filter: brightness(110%);
+}
+
 .image-link  img{
     max-width: 100%;
     height: 100%;

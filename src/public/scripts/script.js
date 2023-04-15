@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
 
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY + window.innerHeight - document.body.offsetHeight > 0 && loadMore) {
+    if (window.scrollY + window.innerHeight + 1000 - document.body.offsetHeight > 0 && loadMore) {
         loadMore = false; // stopped multiple request 
         getImages();
     };
