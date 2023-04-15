@@ -32,7 +32,7 @@ app.get('/api', async (req, res) => {
 
     let body = '';
     https.get(options, (response) => {
-        totalApiRequests--;
+        console.log(--totalApiRequests);
         try {
             if (response.statusCode !== 200) {
                 throw new Error('Error fetching images!');
