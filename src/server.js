@@ -14,10 +14,6 @@ const apiKey = process.env.UNSPLASH_API_KEY;
 let count = 20;
 let totalApiRequests = 30;
 
-setTimeout(()=>{
-    totalApiRequests = 30;
-}, 60*60*1000)
-
 app.use(express.static(publicDir));
 
 app.get('/', (req, res) => {
