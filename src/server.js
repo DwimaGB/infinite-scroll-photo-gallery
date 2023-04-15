@@ -12,11 +12,8 @@ const publicDir = path.join(__dirname, 'src/public')
 const apiKey = process.env.UNSPLASH_API_KEY;
 
 let count = 20;
-let totalApiRequests = 2;
+let totalApiRequests = 30;
 
-setInterval(()=>{
-    totalApiRequests = 2
-}, 1000*60*2)
 
 app.use(express.static(publicDir));
 
