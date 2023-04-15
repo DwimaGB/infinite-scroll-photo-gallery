@@ -84,6 +84,12 @@ h1{
     .column{
         gap: 10px;
     }
+
+    .error-message{
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+       
+    }
 }
 
 @media screen and (max-width: 425px){
@@ -97,5 +103,11 @@ h1{
     }
     .column{
         gap: 5px;
+    }
+
+    .error-message{
+        font-size: 1.25rem;
+        letter-spacing: 1.2px;
+       
     }
 }
