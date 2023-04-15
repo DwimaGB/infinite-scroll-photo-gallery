@@ -12,7 +12,11 @@ const publicDir = path.join(__dirname, 'src/public')
 const apiKey = process.env.UNSPLASH_API_KEY;
 
 let count = 20;
-let totalApiRequests = 5;
+let totalApiRequests = 2;
+
+setInterval(()=>{
+    totalApiRequests = 2
+}, 1000*60*2)
 
 app.use(express.static(publicDir));
 
@@ -26,7 +30,7 @@ app.get('/api', async (req, res) => {
         path: `/photos/random?count=${count}&client_id=${apiKey}`
     }
     if(totalApiRequests === 0){
-        return res.status(429).json({err: "Too many requests, try again later"});
+        return res.status(429).json({err: "Too many requests, try again later!"});
     }
 
     let body = '';
@@ -46,7 +50,6 @@ app.get('/api', async (req, res) => {
         catch (e) {
             res.status(500).json({err: e.message});
         }
-
     })
 
 })
